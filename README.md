@@ -66,11 +66,12 @@ prohibidas y las faltas.
    ampliado y actualización de Vitest a una versión sin vulnerabilidades según
    `npm audit`.
 
-## Abrir el proyecto
+## Abrir el juego
 
-El código está en el [repositorio de GitHub](https://github.com/4845321-design/Practica2).
-El juego no está desplegado como sitio web público; para jugarlo, ejecútalo
-localmente con los pasos siguientes.
+[Jugar La Palabra Prohibida en GitHub Pages](https://4845321-design.github.io/Practica2/).
+
+El código fuente y el historial de cambios están en el
+[repositorio de GitHub](https://github.com/4845321-design/Practica2).
 
 ## Ejecutar en otra máquina
 
