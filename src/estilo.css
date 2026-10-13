@@ -22,21 +22,31 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
-  min-width: 320px;
+  width: 100%;
+  min-width: 0;
   min-height: 100vh;
   margin: 0;
+  overflow-x: clip;
   background:
     radial-gradient(ellipse at top, #203343 0, transparent 58%),
     #101820;
 }
 
 button {
+  min-width: 44px;
+  min-height: 44px;
   font: inherit;
 }
 
 #app {
   display: grid;
+  width: 100%;
+  min-width: 0;
   min-height: 100vh;
   place-items: center;
   padding: 24px;
@@ -44,6 +54,7 @@ button {
 
 .panel {
   width: min(100%, 680px);
+  min-width: 0;
   padding: clamp(24px, 6vw, 48px);
   border: 1px solid var(--borde);
   border-radius: 24px;
@@ -55,6 +66,7 @@ h1,
 h2,
 p {
   margin-top: 0;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -82,6 +94,7 @@ h1 {
 
 .boton {
   display: inline-flex;
+  width: 100%;
   min-width: 44px;
   min-height: 44px;
   align-items: center;
@@ -92,6 +105,7 @@ h1 {
   border-radius: 14px;
   color: #fff;
   font-weight: 800;
+  overflow-wrap: anywhere;
   cursor: pointer;
   touch-action: manipulation;
   transition:
@@ -136,9 +150,14 @@ kbd {
 
 .encabezado-ronda {
   display: flex;
+  min-width: 0;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+}
+
+.encabezado-ronda > div {
+  min-width: 0;
 }
 
 .encabezado-ronda h1 {
@@ -146,6 +165,7 @@ kbd {
 }
 
 .temporizador {
+  flex: 0 0 auto;
   min-width: 96px;
   margin: 0;
   padding: 10px 14px;
@@ -165,6 +185,7 @@ kbd {
 }
 
 .tarjeta {
+  min-width: 0;
   padding: 24px;
   border: 1px solid var(--borde);
   border-radius: 18px;
@@ -239,6 +260,7 @@ kbd {
 
 .acciones {
   display: grid;
+  min-width: 0;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }

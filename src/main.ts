@@ -206,6 +206,7 @@ document.addEventListener("keydown", (evento: KeyboardEvent) => {
   if (evento.key === "Enter") {
     if (estado.fase !== "en_curso") {
       iniciarRonda();
+      evento.preventDefault();
     }
     return;
   }
