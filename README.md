@@ -70,6 +70,10 @@ prohibidas y las faltas.
 
 [Jugar La Palabra Prohibida en GitHub Pages](https://4845321-design.github.io/Practica2/).
 
+Escanea este código QR con la cámara del celular para abrir el juego:
+
+![Código QR para abrir La Palabra Prohibida](./docs/evidencias/qr-jugar-la-palabra-prohibida.png)
+
 El código fuente y el historial de cambios están en el
 [repositorio de GitHub](https://github.com/4845321-design/Practica2).
 
