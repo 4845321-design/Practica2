@@ -1,0 +1,53 @@
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: paginas
+  cancel-in-progress: true
+
+jobs:
+  construir-y-publicar:
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Compilar el sitio
+        run: npm run build
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir la compilación
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Publicar el sitio
+        id: publicar
+        uses: actions/deploy-pages@v4
